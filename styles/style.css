@@ -96,6 +96,7 @@ body {
 }
 
 #hero #main-nav #nav-btn {
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,8 +106,12 @@ body {
   border-radius: 3px;
 }
 
+#hero #main-nav #nav-btn:hover {
+  color: #000;
+  background-color: #fff;
+}
+
 #hero #main-nav #nav-btn i {
-  color: #fff;
   margin: auto;
 }
 
