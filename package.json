@@ -1,0 +1,20 @@
+{
+  "name": "web-001-shutter",
+  "version": "1.0.0",
+  "description": "Website replica for practicing Web design and development. Site replicated: http://template-shutter.webflow.io/home-2",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch styles/sass:styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyspal/web-001-shutter.git"
+  },
+  "author": "Sylvain Laporte",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Lyspal/web-001-shutter/issues"
+  },
+  "homepage": "https://github.com/Lyspal/web-001-shutter#readme"
+}

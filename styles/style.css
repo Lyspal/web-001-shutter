@@ -18,8 +18,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
@@ -48,7 +47,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -59,7 +58,7 @@ table {
 
 body {
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /* ==============================================
@@ -67,25 +66,16 @@ body {
 ============================================== */
 #hero {
   height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url(../images/hero.jpg) center/auto 100% no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/hero.jpg) center/auto 100% no-repeat;
 }
-
 #hero #main-nav {
   width: 100%;
   height: 60px;
   padding: 10px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
-
 #hero #main-nav #logo {
   width: 43%;
   height: 100%;
@@ -94,32 +84,54 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 #hero #main-nav #nav-btn {
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 40px;
   height: 40px;
   border: 1px solid #fff;
   border-radius: 3px;
 }
-
 #hero #main-nav #nav-btn:hover {
   color: #000;
   background-color: #fff;
 }
-
 #hero #main-nav #nav-btn i {
   margin: auto;
 }
-
 #hero #main-nav #nav-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100vh;
+  background-color: #000;
+}
+#hero #main-nav #nav-menu .nav-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 10px 25px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#hero #main-nav #nav-menu .nav-sub-menu .nav-element {
+  height: 35px;
+  padding-left: 15px;
+  background-color: #333;
+}
+#hero #main-nav #nav-menu .nav-element:hover {
+  background-color: #3f69ee;
 }
 
 /* ==============================================
     Section 1 - Hero
 ============================================== */
+
 /*# sourceMappingURL=style.css.map */
