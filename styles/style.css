@@ -99,8 +99,8 @@ body {
 #hero #main-nav #nav-btn i {
   margin: auto;
 }
-#hero #main-nav #nav-menu {
-  display: flex;
+#hero #main-nav .nav-menu {
+  display: none;
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -108,8 +108,9 @@ body {
   width: 62%;
   height: 100vh;
   background-color: #000;
+  overflow: hidden;
 }
-#hero #main-nav #nav-menu .nav-element {
+#hero #main-nav .nav-menu .nav-element {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -120,14 +121,18 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
+  cursor: pointer;
 }
-#hero #main-nav #nav-menu .nav-sub-menu .nav-element {
+#hero #main-nav .nav-menu .nav-sub-menu .nav-element {
   height: 35px;
   padding-left: 15px;
   background-color: #333;
 }
-#hero #main-nav #nav-menu .nav-element:hover {
+#hero #main-nav .nav-menu .nav-element:hover {
   background-color: #3f69ee;
+}
+#hero #main-nav .active {
+  display: flex;
 }
 
 /* ==============================================
