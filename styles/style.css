@@ -123,6 +123,13 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
+#hero #main-nav .nav-menu .nav-sub-menu {
+  display: none;
+  flex-direction: column;
+}
+#hero #main-nav .nav-menu .active {
+  display: flex;
+}
 #hero #main-nav .nav-menu .nav-sub-menu .nav-element {
   height: 35px;
   padding-left: 15px;

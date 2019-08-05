@@ -14,9 +14,6 @@ body {
 ============================================== */
 
 #hero {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     height: 100vh;
     background:
         linear-gradient(
@@ -83,6 +80,15 @@ body {
                 letter-spacing: 1px;
                 text-transform: uppercase;
                 cursor: pointer;
+            }
+
+            .nav-sub-menu {
+                display: none;
+                flex-direction: column;
+            }
+
+            .active {
+                display: flex;
             }
 
             .nav-sub-menu .nav-element {
