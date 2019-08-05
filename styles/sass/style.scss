@@ -4,9 +4,31 @@
 
 @import 'reset';
 
+/* ==============================================
+    Base
+============================================== */
+
+$colors: (
+    dark: #333,
+    light-text: #fff,
+    btn-primary: #3f69ee,
+    btn-secondary: #fff
+);
+
 body {
     width: 100%;
     font-family: 'Lato', sans-serif;
+    color: map-get($colors, "dark");
+    font-size: 14px;
+    line-height: 20px;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+%text-shadow {
+    text-shadow: 1px 1px 16px rgba(0, 0, 0, .2);
 }
 
 /* ==============================================
@@ -14,11 +36,14 @@ body {
 ============================================== */
 
 #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     background:
         linear-gradient(
-            rgba($color: #000000, $alpha: 0.2),
-            rgba($color: #000000, $alpha: 0.2)
+            rgba($color: #000, $alpha: 0.2),
+            rgba($color: #000, $alpha: 0.2)
         ),
         url(../images/hero.jpg) center / auto 100% no-repeat;
 
@@ -94,7 +119,7 @@ body {
             .nav-sub-menu .nav-element {
                 height: 35px;
                 padding-left: 15px;
-                background-color: #333;
+                background-color: map-get($colors, "dark");
             }
 
             .nav-element:hover {
@@ -104,6 +129,73 @@ body {
 
         .active {
             display: flex;
+        }
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 0 10px 20px;
+
+        h1 {
+            font-size: 2.25em;
+            font-weight: 400;
+            line-height: 32px;
+            color: map-get($colors, "light-text");
+            @extend %text-shadow;
+        }
+
+        h2 {
+            width: 100%;
+            margin: 10px 0;
+            color: map-get($colors, "light-text");
+            font-weight: 300;
+            line-height: 25px;
+            @extend %text-shadow;
+        }
+
+        %hero-buttons {
+            width: 210px;
+            margin-top: 6px;
+            margin-right: 8px;
+            margin-left: 8px;
+            padding: 8px 9px 7px;
+            border: 0;
+            border-radius: 4px;
+            font-size: .7em;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        #btn1 {
+            @extend %hero-buttons;
+            background-color: map-get($colors, "btn-primary");
+            color: map-get($colors, "light-text");
+        }
+
+        #btn2 {
+            @extend %hero-buttons;
+            background-color: map-get($colors, "btn-secondary");
+            color: map-get($colors, "btn-primary");
+        }
+    }
+
+    .photographer-block {
+        $padding: 10px;
+        padding-right: $padding * 3;
+        padding-bottom: $padding * 2;
+        color: map-get($colors, "light-text");
+        font-size: 0.86em;
+        font-weight: 300;
+        text-align: right;
+
+        a {
+            color: map-get($colors, "light-text");
+            font-size: 0.86em;
+            font-weight: 700;
+            text-decoration: none;
         }
     }
 }
