@@ -10,9 +10,13 @@
 
 $colors: (
     dark: #333,
+    medium-text: #b3b3b3,
     light-text: #fff,
     btn-primary: #3f69ee,
-    btn-secondary: #fff
+    btn-secondary: #fff,
+    btn-border: #d9dadd,
+    tinted-border: #ebebeb,
+    tinted-background: #f5f7f8
 );
 
 body {
@@ -23,8 +27,40 @@ body {
     line-height: 20px;
 }
 
+.section-header {
+    padding: 22px;
+    background-color: #fff;
+    text-align: center;
+}
+
 a, button {
     cursor: pointer;
+}
+
+button {
+    width: 210px;
+    margin-top: 6px;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 8px 9px 7px;
+    border: 0;
+    border-radius: 4px;
+    font-size: .7em;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.dark-button {
+    background-color: map-get($colors, "btn-primary");
+    color: map-get($colors, "light-text");
+}
+
+.light-button {
+    background-color: map-get($colors, "btn-secondary");
+    color: map-get($colors, "btn-primary");
 }
 
 %text-shadow {
@@ -65,16 +101,16 @@ a, button {
         }
 
         #nav-btn {
-            color: #fff;
+            color: map-get($colors, "light-text");
             display: flex;
             width: 40px;
             height: 40px;
-            border: 1px solid #fff;
+            border: 1px solid map-get($colors, "btn-secondary");
             border-radius: 3px;
 
             &:hover {
                 color: #000;
-                background-color: #fff;
+                background-color:  map-get($colors, "btn-secondary");
             }
 
             i {
@@ -152,34 +188,6 @@ a, button {
             line-height: 25px;
             @extend %text-shadow;
         }
-
-        %hero-buttons {
-            width: 210px;
-            margin-top: 6px;
-            margin-right: 8px;
-            margin-left: 8px;
-            padding: 8px 9px 7px;
-            border: 0;
-            border-radius: 4px;
-            font-size: .7em;
-            font-weight: 400;
-            line-height: 21px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-
-        #btn1 {
-            @extend %hero-buttons;
-            background-color: map-get($colors, "btn-primary");
-            color: map-get($colors, "light-text");
-        }
-
-        #btn2 {
-            @extend %hero-buttons;
-            background-color: map-get($colors, "btn-secondary");
-            color: map-get($colors, "btn-primary");
-        }
     }
 
     .photographer-block {
@@ -202,6 +210,79 @@ a, button {
 
 
 /* ==============================================
-    Section 1 - Hero
+    Section 1 - Featured photos
 ============================================== */
 
+#featured-photos {
+    h2 {
+        font-size: 2em;
+        line-height: 32px;
+    }
+
+    h3 {
+        margin-top: 7px;
+        color: map-get($colors, "medium-text");
+        font-size: 1em;
+        line-height: 23px;
+    }
+
+    .photos-wrapper {
+        padding: 22px;
+        text-align: center;
+        border-top: 1px solid map-get($colors, "tinted-border");
+        background-color: map-get($colors, "tinted-background");;
+
+        a {
+            width: 100%;
+            display: block;
+            margin-bottom: 6px;
+
+            figure {
+                position: relative;
+                z-index: 1;
+    
+                .pic-gradient {
+                    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .7) 100%);
+                    overflow: hidden;
+                }
+    
+                img {
+                    position: relative;
+                    z-index: -1;
+                    width: 100%;
+                    margin: -5% 0;
+                }
+    
+                figcaption {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    color: map-get($colors, "light-text");
+                }
+            }
+            // TODO vérifier pourquoi ne fonctionne pas.
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .btn-wrapper {
+            margin-top: 14px;
+
+            button {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .light-button {
+                border: 1px solid map-get($colors, "btn-border");
+                background-color: transparent;
+                color: #000;
+            }
+        }
+    }
+}
+
+/* ==============================================
+    Footer
+============================================== */
