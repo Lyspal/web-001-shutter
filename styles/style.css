@@ -246,28 +246,34 @@ button {
   display: block;
   margin-bottom: 6px;
 }
+#featured-photos .photos-wrapper a:last-child {
+  margin-bottom: 0;
+}
 #featured-photos .photos-wrapper a figure {
   position: relative;
-  z-index: 1;
-}
-#featured-photos .photos-wrapper a figure .pic-gradient {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
   overflow: hidden;
 }
-#featured-photos .photos-wrapper a figure img {
-  position: relative;
-  z-index: -1;
+#featured-photos .photos-wrapper a figure::after {
+  content: " ";
   width: 100%;
-  margin: -5% 0;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+}
+#featured-photos .photos-wrapper a figure img {
+  width: 100%;
+  display: block;
+  margin: -6% 0;
 }
 #featured-photos .photos-wrapper a figure figcaption {
   position: absolute;
   bottom: 20px;
   left: 20px;
+  z-index: 1;
   color: #fff;
-}
-#featured-photos .photos-wrapper a:last-child {
-  margin-bottom: 0;
 }
 #featured-photos .photos-wrapper .btn-wrapper {
   margin-top: 14px;
