@@ -291,5 +291,49 @@ button {
 /* ==============================================
     Footer
 ============================================== */
+footer {
+  padding: 22px;
+  border-top: 1px solid #eee;
+  color: #adb6be;
+  font-size: 13px;
+  line-height: 24px;
+}
+footer div {
+  padding-bottom: 15px;
+}
+footer h2 {
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+footer p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+footer li {
+  display: flex;
+  margin-bottom: 8px;
+}
+footer li i {
+  width: 15px;
+  color: #000;
+  margin-right: 10px;
+}
+footer .copyright {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 20px;
+  font-size: 12px;
+}
+footer .copyright a {
+  color: #7a8792;
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=style.css.map */

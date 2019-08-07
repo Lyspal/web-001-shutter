@@ -11,6 +11,7 @@
 $colors: (
     dark: #333,
     medium-text: #b3b3b3,
+    medium-light-text: #adb6be,
     light-text: #fff,
     btn-primary: #3f69ee,
     btn-secondary: #fff,
@@ -18,6 +19,8 @@ $colors: (
     tinted-border: #ebebeb,
     tinted-background: #f5f7f8
 );
+
+$padding: 22px;
 
 body {
     width: 100%;
@@ -227,7 +230,7 @@ button {
     }
 
     .photos-wrapper {
-        padding: 22px;
+        padding: $padding;
         text-align: center;
         border-top: 1px solid map-get($colors, "tinted-border");
         background-color: map-get($colors, "tinted-background");;
@@ -294,3 +297,54 @@ button {
     Footer
 ============================================== */
 
+footer {
+    padding: $padding;
+    border-top: 1px solid #eee;
+    color: map-get($colors, "medium-light-text");
+    font-size: 13px;
+    line-height: 24px;
+
+    div {
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        color: #000;
+        font-size: 1em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+
+    li {
+        display: flex;
+        margin-bottom: 8px;
+
+        i {
+            width: 15px;
+            color: #000;
+            margin-right: 10px;
+        }
+    }
+
+    .copyright {
+        margin-top: 30px;
+        border-top: 1px solid rgba(0, 0, 0, .06);
+        padding-top: 20px;
+        font-size: 12px;
+
+        a {
+            color: #7a8792;
+            text-decoration: none;
+        }
+    }
+}
