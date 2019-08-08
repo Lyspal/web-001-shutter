@@ -4,6 +4,8 @@
 // object: Implements animations on scroll.
 // reference: https://cssanimation.rocks/scroll-animations/
 
+// TODO: Not working.
+
 const callback = function(entries) {
     entries.forEach(entry => {
       entry.target.classList.toggle("is-visible");
