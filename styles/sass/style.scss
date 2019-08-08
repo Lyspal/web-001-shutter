@@ -309,12 +309,6 @@ button {
                 width: 100%;
                 margin-left: 0;
             }
-
-            .light-button {
-                border: 1px solid map-get($colors, "border-btn");
-                background-color: transparent;
-                color: map-get($colors, "text-dark");
-            }
         }
     }
 }
