@@ -9,15 +9,21 @@
 ============================================== */
 
 $colors: (
-    dark: #333,
-    medium-text: #b3b3b3,
-    medium-light-text: #adb6be,
-    light-text: #fff,
-    btn-primary: #3f69ee,
-    btn-secondary: #fff,
-    btn-border: #d9dadd,
-    tinted-border: #ebebeb,
-    tinted-background: #f5f7f8
+    // Palette
+    dominant: #3f69ee,
+    accent1: #59a0e8,
+    accent2: #2d3553,
+    background: white,
+    // Misc colors
+    background-photos: #f5f7f8,
+    background-menu: black,
+    background-submenu: #333,
+    text-light: white,
+    text-medium1: #adb6be,
+    text-medium2: #7a8792,
+    text-dark: #333,
+    border: #ebebeb,
+    border-btn: #d9dadd
 );
 
 $padding: 22px;
@@ -25,14 +31,14 @@ $padding: 22px;
 body {
     width: 100%;
     font-family: 'Lato', sans-serif;
-    color: map-get($colors, "dark");
+    color: map-get($colors, "text-dark");
     font-size: 14px;
     line-height: 20px;
+    background-color: map-get($colors, "background");
 }
 
 .section-header {
-    padding: 22px;
-    background-color: #fff;
+    padding: $padding;
     text-align: center;
 }
 
@@ -54,16 +60,37 @@ button {
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .dark-button {
-    background-color: map-get($colors, "btn-primary");
-    color: map-get($colors, "light-text");
+    background-color: map-get($colors, "dominant");
+    color: map-get($colors, "text-light");
+
+    &:hover {
+        background-color: map-get($colors, "accent1");
+    }
 }
 
 .light-button {
-    background-color: map-get($colors, "btn-secondary");
-    color: map-get($colors, "btn-primary");
+    background-color: map-get($colors, "background");
+    color: map-get($colors, "dominant");
+
+    &:hover {
+        background-color: map-get($colors, "accent2");
+        color: map-get($colors, "text-light");
+    }
+}
+
+.transparent-button {
+    border: 1px solid map-get($colors, "border-btn");
+    background-color: transparent;
+    color: map-get($colors, "text-dark");
+
+    &:hover {
+        background-color: map-get($colors, "accent1");
+        color: map-get($colors, "text-light");
+    }
 }
 
 %text-shadow {
@@ -75,10 +102,10 @@ button {
 ============================================== */
 
 #hero {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
     background:
         linear-gradient(
             rgba($color: #000, $alpha: 0.2),
@@ -104,16 +131,16 @@ button {
         }
 
         #nav-btn {
-            color: map-get($colors, "light-text");
+            color: map-get($colors, "text-light");
             display: flex;
             width: 40px;
             height: 40px;
-            border: 1px solid map-get($colors, "btn-secondary");
+            border: 1px solid map-get($colors, "background");
             border-radius: 3px;
 
             &:hover {
-                color: #000;
-                background-color:  map-get($colors, "btn-secondary");
+                color: black;
+                background-color:  map-get($colors, "background");
             }
 
             i {
@@ -129,7 +156,7 @@ button {
             right: 0;
             width: 62%;
             height: 100vh;
-            background-color: #000;
+            background-color: map-get($colors, "background-menu");
             overflow: hidden;
 
             .nav-element {
@@ -138,7 +165,7 @@ button {
                 justify-content: space-between;
                 height: 40px;
                 padding: 10px 25px;
-                color: #fff;
+                color: map-get($colors, "text-light");
                 font-size: 11px;
                 font-weight: 300;
                 letter-spacing: 1px;
@@ -158,11 +185,11 @@ button {
             .nav-sub-menu .nav-element {
                 height: 35px;
                 padding-left: 15px;
-                background-color: map-get($colors, "dark");
+                background-color: map-get($colors, "background-submenu");
             }
 
             .nav-element:hover {
-                background-color: #3f69ee;
+                background-color: map-get($colors, "dominant");
             }
         }
 
@@ -174,19 +201,18 @@ button {
     .hero-content {
         text-align: center;
         padding: 0 10px 20px;
+        color: map-get($colors, "text-light");
 
         h1 {
             font-size: 2.25em;
             font-weight: 400;
             line-height: 32px;
-            color: map-get($colors, "light-text");
             @extend %text-shadow;
         }
 
         h2 {
             width: 100%;
             margin: 10px 0;
-            color: map-get($colors, "light-text");
             font-weight: 300;
             line-height: 25px;
             @extend %text-shadow;
@@ -197,13 +223,13 @@ button {
         $padding: 10px;
         padding-right: $padding * 3;
         padding-bottom: $padding * 2;
-        color: map-get($colors, "light-text");
+        color: map-get($colors, "text-light");
         font-size: 0.86em;
         font-weight: 300;
         text-align: right;
 
         a {
-            color: map-get($colors, "light-text");
+            color: map-get($colors, "text-light");
             font-size: 0.86em;
             font-weight: 700;
             text-decoration: none;
@@ -224,7 +250,7 @@ button {
 
     h3 {
         margin-top: 7px;
-        color: map-get($colors, "medium-text");
+        color: map-get($colors, "text-medium1");
         font-size: 1em;
         line-height: 23px;
     }
@@ -232,8 +258,8 @@ button {
     .photos-wrapper {
         padding: $padding;
         text-align: center;
-        border-top: 1px solid map-get($colors, "tinted-border");
-        background-color: map-get($colors, "tinted-background");;
+        border-top: 1px solid map-get($colors, "border");
+        background-color: map-get($colors, "background-photos");;
 
         a {
             width: 100%;
@@ -250,7 +276,7 @@ button {
                 overflow: hidden;
 
                 &::after {
-                    content: ' ';
+                    content: '';
                     width: 100%;
                     height: 100%;
                     display: block;
@@ -271,7 +297,7 @@ button {
                     bottom: 20px;
                     left: 20px;
                     z-index: 1;
-                    color: map-get($colors, "light-text");
+                    color: map-get($colors, "text-light");
                 }
             }
         }
@@ -285,9 +311,9 @@ button {
             }
 
             .light-button {
-                border: 1px solid map-get($colors, "btn-border");
+                border: 1px solid map-get($colors, "border-btn");
                 background-color: transparent;
-                color: #000;
+                color: map-get($colors, "text-dark");
             }
         }
     }
@@ -300,7 +326,7 @@ button {
 footer {
     padding: $padding;
     border-top: 1px solid #eee;
-    color: map-get($colors, "medium-light-text");
+    color: map-get($colors, "text-medium1");
     font-size: 13px;
     line-height: 24px;
 
@@ -334,6 +360,11 @@ footer {
             color: #000;
             margin-right: 10px;
         }
+
+        a:hover {
+            color: map-get($colors, "dominant");
+            text-decoration: underline;
+        }
     }
 
     .copyright {
@@ -344,8 +375,12 @@ footer {
         font-size: 12px;
 
         a {
-            color: #7a8792;
+            color: map-get($colors, "text-medium2");;
             text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

@@ -65,11 +65,11 @@ body {
   color: #333;
   font-size: 14px;
   line-height: 20px;
+  background-color: white;
 }
 
 .section-header {
   padding: 22px;
-  background-color: #fff;
   text-align: center;
 }
 
@@ -91,16 +91,34 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .dark-button {
   background-color: #3f69ee;
-  color: #fff;
+  color: white;
+}
+.dark-button:hover {
+  background-color: #59a0e8;
 }
 
 .light-button {
-  background-color: #fff;
+  background-color: white;
   color: #3f69ee;
+}
+.light-button:hover {
+  background-color: #2d3553;
+  color: white;
+}
+
+.transparent-button {
+  border: 1px solid #d9dadd;
+  background-color: transparent;
+  color: #333;
+}
+.transparent-button:hover {
+  background-color: #59a0e8;
+  color: white;
 }
 
 #hero .hero-content h2, #hero .hero-content h1 {
@@ -111,10 +129,10 @@ button {
     Hero Header
 ============================================== */
 #hero {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/hero.jpg) center/auto 100% no-repeat;
 }
 #hero #main-nav {
@@ -134,16 +152,16 @@ button {
   background-repeat: no-repeat;
 }
 #hero #main-nav #nav-btn {
-  color: #fff;
+  color: white;
   display: flex;
   width: 40px;
   height: 40px;
-  border: 1px solid #fff;
+  border: 1px solid white;
   border-radius: 3px;
 }
 #hero #main-nav #nav-btn:hover {
-  color: #000;
-  background-color: #fff;
+  color: black;
+  background-color: white;
 }
 #hero #main-nav #nav-btn i {
   margin: auto;
@@ -156,7 +174,7 @@ button {
   right: 0;
   width: 62%;
   height: 100vh;
-  background-color: #000;
+  background-color: black;
   overflow: hidden;
 }
 #hero #main-nav .nav-menu .nav-element {
@@ -165,7 +183,7 @@ button {
   justify-content: space-between;
   height: 40px;
   padding: 10px 25px;
-  color: #fff;
+  color: white;
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -193,30 +211,29 @@ button {
 #hero .hero-content {
   text-align: center;
   padding: 0 10px 20px;
+  color: white;
 }
 #hero .hero-content h1 {
   font-size: 2.25em;
   font-weight: 400;
   line-height: 32px;
-  color: #fff;
 }
 #hero .hero-content h2 {
   width: 100%;
   margin: 10px 0;
-  color: #fff;
   font-weight: 300;
   line-height: 25px;
 }
 #hero .photographer-block {
   padding-right: 30px;
   padding-bottom: 20px;
-  color: #fff;
+  color: white;
   font-size: 0.86em;
   font-weight: 300;
   text-align: right;
 }
 #hero .photographer-block a {
-  color: #fff;
+  color: white;
   font-size: 0.86em;
   font-weight: 700;
   text-decoration: none;
@@ -231,7 +248,7 @@ button {
 }
 #featured-photos h3 {
   margin-top: 7px;
-  color: #b3b3b3;
+  color: #adb6be;
   font-size: 1em;
   line-height: 23px;
 }
@@ -254,7 +271,7 @@ button {
   overflow: hidden;
 }
 #featured-photos .photos-wrapper a figure::after {
-  content: " ";
+  content: "";
   width: 100%;
   height: 100%;
   display: block;
@@ -273,7 +290,7 @@ button {
   bottom: 20px;
   left: 20px;
   z-index: 1;
-  color: #fff;
+  color: white;
 }
 #featured-photos .photos-wrapper .btn-wrapper {
   margin-top: 14px;
@@ -285,7 +302,7 @@ button {
 #featured-photos .photos-wrapper .btn-wrapper .light-button {
   border: 1px solid #d9dadd;
   background-color: transparent;
-  color: #000;
+  color: #333;
 }
 
 /* ==============================================
@@ -325,6 +342,10 @@ footer li i {
   color: #000;
   margin-right: 10px;
 }
+footer li a:hover {
+  color: #3f69ee;
+  text-decoration: underline;
+}
 footer .copyright {
   margin-top: 30px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -335,6 +356,9 @@ footer .copyright {
 footer .copyright a {
   color: #7a8792;
   text-decoration: none;
+}
+footer .copyright a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */
