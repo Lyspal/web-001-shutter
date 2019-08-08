@@ -167,15 +167,16 @@ button {
   margin: auto;
 }
 #hero #main-nav .nav-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: 0;
+  right: -62%;
   width: 62%;
   height: 100vh;
   background-color: black;
   overflow: hidden;
+  transition: right 0.2s ease-in-out;
 }
 #hero #main-nav .nav-menu .nav-element {
   display: flex;
@@ -206,7 +207,7 @@ button {
   background-color: #3f69ee;
 }
 #hero #main-nav .active {
-  display: flex;
+  right: 0;
 }
 #hero .hero-content {
   text-align: center;

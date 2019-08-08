@@ -149,15 +149,16 @@ button {
         }
 
         .nav-menu {
-            display: none;
+            display: flex;
             flex-direction: column;
             position: fixed;
             top: 0;
-            right: 0;
+            right: -62%;
             width: 62%;
             height: 100vh;
             background-color: map-get($colors, "background-menu");
             overflow: hidden;
+            transition: right .2s ease-in-out;
 
             .nav-element {
                 display: flex;
@@ -178,6 +179,7 @@ button {
                 flex-direction: column;
             }
 
+            // Sub menu show/hide
             .active {
                 display: flex;
             }
@@ -193,8 +195,9 @@ button {
             }
         }
 
+        // Navigation menu show/hide
         .active {
-            display: flex;
+            right: 0;
         }
     }
 
