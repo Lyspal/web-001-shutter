@@ -145,6 +145,11 @@ button {
   justify-content: space-between;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/hero.jpg) center/auto 100% no-repeat;
 }
+@media screen and (min-width: 972px) {
+  #hero {
+    background-size: 100% auto;
+  }
+}
 #hero #main-nav {
   width: 100%;
   height: 60px;

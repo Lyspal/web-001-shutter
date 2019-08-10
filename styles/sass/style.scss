@@ -132,6 +132,10 @@ button {
         ),
         url(../images/hero.jpg) center / auto 100% no-repeat;
 
+        @media screen and (min-width: 972px) {
+            background-size: 100% auto;
+        }
+
     #main-nav {
         width: 100%;
         height: 60px;
