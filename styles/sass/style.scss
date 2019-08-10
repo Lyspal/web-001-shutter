@@ -8,6 +8,11 @@
     Base
 ============================================== */
 
+// $layout-breakpoints: (
+//     small: 768px,
+//     large: 991px
+// );
+
 $colors: (
     // Palette
     dominant: #3f69ee,
@@ -29,6 +34,7 @@ $colors: (
 $padding: 22px;
 
 body {
+    min-width: 320px;
     width: 100%;
     font-family: 'Lato', sans-serif;
     color: map-get($colors, "text-dark");
@@ -40,17 +46,22 @@ body {
 .section-header {
     padding: $padding;
     text-align: center;
+
+    @media screen and (min-width: 768px) {
+        padding: $padding * 2;
+    }
 }
 
 a, button {
     cursor: pointer;
 }
 
+//  Buttons
+// ==============================================
+
 button {
     width: 210px;
-    margin-top: 6px;
-    margin-right: 8px;
-    margin-left: 8px;
+    height: 45px;
     padding: 8px 9px 7px;
     border: 0;
     border-radius: 4px;
@@ -61,6 +72,12 @@ button {
     text-transform: uppercase;
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
+
+    @media screen and (min-width: 768px) {
+        width: 220px;
+        padding: 12px 27px;
+        font-size: .85em;
+    }
 }
 
 .dark-button {
@@ -93,6 +110,9 @@ button {
     }
 }
 
+//  Common Effects
+// ==============================================
+
 %text-shadow {
     text-shadow: 1px 1px 16px rgba(0, 0, 0, .2);
 }
@@ -121,13 +141,20 @@ button {
         align-items: center;
         justify-content: space-between;
 
+        @media screen and (min-width: 768px) {
+            height: 110px;
+            padding: 30px 20px;;
+        }
+
         #logo {
-            width: 43%;
-            height:100%;
-            background-image: url(../images/shutter-logo.png);
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
+            max-width: 100%;
+            height:15px;
+            display: inline-block;
+            vertical-align: middle;
+
+            @media screen and (min-width: 768px) {
+                height: 28px;
+            }
         }
 
         #nav-btn {
@@ -137,6 +164,12 @@ button {
             height: 40px;
             border: 1px solid map-get($colors, "background");
             border-radius: 3px;
+
+            @media screen and (min-width: 768px) {
+                width: 50px;
+                height: 50px;
+            }
+    
 
             &:hover {
                 color: black;
@@ -153,8 +186,8 @@ button {
             flex-direction: column;
             position: fixed;
             top: 0;
-            right: -62%;
-            width: 62%;
+            right: -200px;
+            width: 200px;
             height: 100vh;
             background-color: map-get($colors, "background-menu");
             overflow: hidden;
@@ -212,19 +245,42 @@ button {
             line-height: 32px;
             @extend %text-shadow;
             animation: 500ms ease fade-in-up-on-load;
+
+            @media screen and (min-width: 768px) {
+                font-size: 3em;
+            }
         }
 
         h2 {
-            width: 100%;
             margin: 10px 0;
             font-weight: 300;
             line-height: 25px;
             @extend %text-shadow;
             animation: 500ms ease fade-in-down-on-load 500ms backwards;
+
+            @media screen and (min-width: 768px) {
+                padding: 10px 0;
+                font-size: 1.4em;
+            }
+        }
+
+        button {
+            margin-top: 6px;
+            margin-right: 8px;
+            margin-left: 8px;
+
+            @media screen and (min-width: 768px) {
+                margin: 20px 8px 0;
+
+            }
         }
 
         .dark-button {
             animation: 500ms ease appears 1s backwards;
+
+            @media screen and (min-width: 768px) {
+                width: 265px;
+            }
         }
         
         .light-button {
@@ -241,11 +297,22 @@ button {
         font-weight: 300;
         text-align: right;
 
+        @media screen and (min-width: 768px) {
+            padding-right: $padding * 5;
+            padding-bottom: $padding *4;
+            font-size: 1em;
+        }
+
         a {
             color: map-get($colors, "text-light");
             font-size: 0.86em;
             font-weight: 700;
             text-decoration: none;
+
+            @media screen and (min-width: 768px) {
+                margin-left: 5px;
+                font-size: 1em;
+            }
         }
     }
 }
@@ -263,6 +330,11 @@ button {
     h2 {
         font-size: 2em;
         line-height: 32px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 2.4em;
+            line-height: 34px;
+        }
     }
 
     h3 {
@@ -270,18 +342,103 @@ button {
         color: map-get($colors, "text-medium1");
         font-size: 1em;
         line-height: 23px;
+
+        @media screen and (min-width: 768px) {
+            margin-top: 14px;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
     }
 
     .photos-wrapper {
+        display: grid;
+        row-gap: 6px;
         padding: $padding;
         text-align: center;
         border-top: 1px solid map-get($colors, "border");
-        background-color: map-get($colors, "background-photos");;
+        background-color: map-get($colors, "background-photos");
+
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 180px 220px 180px auto;
+            column-gap: 10px;
+            row-gap: 10px;
+            padding: $padding * 2;
+
+            .box1 {
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .box2 {
+                grid-column-start: 5;
+                grid-column-end: 9;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .box3 {
+                grid-column-start: 9;
+                grid-column-end: 13;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .box4 {
+                grid-column-start: 1;
+                grid-column-end: 7;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            .box5 {
+                grid-column-start: 7;
+                grid-column-end: 13;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            .box6 {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .box7 {
+                grid-column-start: 4;
+                grid-column-end: 7;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .box8 {
+                grid-column-start: 7;
+                grid-column-end: 10;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .box9 {
+                grid-column-start: 10;
+                grid-column-end: 13;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .box10 {
+                grid-column-start: 1;
+                grid-column-end: 13;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+        }
 
         a {
             width: 100%;
             display: block;
-            margin-bottom: 6px;
 
             // TODO vérifier pourquoi ne fonctionne pas.
             &:last-child {
@@ -289,6 +446,7 @@ button {
             }
 
             figure {
+                height: 100%;
                 position: relative;
                 overflow: hidden;
 
@@ -307,14 +465,27 @@ button {
                     width: 100%;
                     display: block;
                     margin: -6% 0;
+
+                    @media screen and (min-width: 768px) {
+                        height: 100%;
+                        margin: 0;
+                        object-fit: cover;
+                        object-position: center;
+                    }
                 }
     
                 figcaption {
+                    width: 80%;
                     position: absolute;
                     bottom: 20px;
                     left: 20px;
                     z-index: 1;
                     color: map-get($colors, "text-light");
+                    text-align: left;
+
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.1em;
+                    }
                 }
             }
         }
@@ -322,9 +493,23 @@ button {
         .btn-wrapper {
             margin-top: 14px;
 
+            @media screen and (min-width: 768px) {
+                display: flex;
+                margin: 45px auto 0;
+            }
+
             button {
-                width: 100%;
-                margin-left: 0;
+                margin: 0 10px;
+
+                @media screen and (min-width: 768px) {
+                    padding: 9px 35px;
+                }
+            }
+
+            .transparent-button {
+                @media screen and (min-width: 768px) {
+                    padding: 9px 20px;
+                }
             }
         }
     }
@@ -335,11 +520,24 @@ button {
 ============================================== */
 
 footer {
+    display: grid;
     padding: $padding;
     border-top: 1px solid #eee;
     color: map-get($colors, "text-medium1");
     font-size: 13px;
     line-height: 24px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        column-gap: 40px;
+        padding: $padding * 2;
+
+        .copyright {
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+    }
 
     div {
         padding-bottom: 15px;

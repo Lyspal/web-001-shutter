@@ -60,6 +60,7 @@ table {
     Base
 ============================================== */
 body {
+  min-width: 320px;
   width: 100%;
   font-family: "Lato", sans-serif;
   color: #333;
@@ -72,6 +73,11 @@ body {
   padding: 22px;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .section-header {
+    padding: 44px;
+  }
+}
 
 a, button {
   cursor: pointer;
@@ -79,9 +85,7 @@ a, button {
 
 button {
   width: 210px;
-  margin-top: 6px;
-  margin-right: 8px;
-  margin-left: 8px;
+  height: 45px;
   padding: 8px 9px 7px;
   border: 0;
   border-radius: 4px;
@@ -92,6 +96,13 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: 220px;
+    padding: 12px 27px;
+    font-size: 0.85em;
+  }
 }
 
 .dark-button {
@@ -143,13 +154,22 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (min-width: 768px) {
+  #hero #main-nav {
+    height: 110px;
+    padding: 30px 20px;
+  }
+}
 #hero #main-nav #logo {
-  width: 43%;
-  height: 100%;
-  background-image: url(../images/shutter-logo.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+@media screen and (min-width: 768px) {
+  #hero #main-nav #logo {
+    height: 28px;
+  }
 }
 #hero #main-nav #nav-btn {
   color: white;
@@ -158,6 +178,12 @@ button {
   height: 40px;
   border: 1px solid white;
   border-radius: 3px;
+}
+@media screen and (min-width: 768px) {
+  #hero #main-nav #nav-btn {
+    width: 50px;
+    height: 50px;
+  }
 }
 #hero #main-nav #nav-btn:hover {
   color: black;
@@ -171,8 +197,8 @@ button {
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: -62%;
-  width: 62%;
+  right: -200px;
+  width: 200px;
   height: 100vh;
   background-color: black;
   overflow: hidden;
@@ -220,15 +246,40 @@ button {
   line-height: 32px;
   animation: 500ms ease fade-in-up-on-load;
 }
+@media screen and (min-width: 768px) {
+  #hero .hero-content h1 {
+    font-size: 3em;
+  }
+}
 #hero .hero-content h2 {
-  width: 100%;
   margin: 10px 0;
   font-weight: 300;
   line-height: 25px;
   animation: 500ms ease fade-in-down-on-load 500ms backwards;
 }
+@media screen and (min-width: 768px) {
+  #hero .hero-content h2 {
+    padding: 10px 0;
+    font-size: 1.4em;
+  }
+}
+#hero .hero-content button {
+  margin-top: 6px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+@media screen and (min-width: 768px) {
+  #hero .hero-content button {
+    margin: 20px 8px 0;
+  }
+}
 #hero .hero-content .dark-button {
   animation: 500ms ease appears 1s backwards;
+}
+@media screen and (min-width: 768px) {
+  #hero .hero-content .dark-button {
+    width: 265px;
+  }
 }
 #hero .hero-content .light-button {
   animation: 500ms ease appears 1.1s backwards;
@@ -241,11 +292,24 @@ button {
   font-weight: 300;
   text-align: right;
 }
+@media screen and (min-width: 768px) {
+  #hero .photographer-block {
+    padding-right: 50px;
+    padding-bottom: 40px;
+    font-size: 1em;
+  }
+}
 #hero .photographer-block a {
   color: white;
   font-size: 0.86em;
   font-weight: 700;
   text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  #hero .photographer-block a {
+    margin-left: 5px;
+    font-size: 1em;
+  }
 }
 
 /* ==============================================
@@ -258,27 +322,111 @@ button {
   font-size: 2em;
   line-height: 32px;
 }
+@media screen and (min-width: 768px) {
+  #featured-photos h2 {
+    font-size: 2.4em;
+    line-height: 34px;
+  }
+}
 #featured-photos h3 {
   margin-top: 7px;
   color: #adb6be;
   font-size: 1em;
   line-height: 23px;
 }
+@media screen and (min-width: 768px) {
+  #featured-photos h3 {
+    margin-top: 14px;
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+}
 #featured-photos .photos-wrapper {
+  display: grid;
+  row-gap: 6px;
   padding: 22px;
   text-align: center;
   border-top: 1px solid #ebebeb;
   background-color: #f5f7f8;
 }
+@media screen and (min-width: 768px) {
+  #featured-photos .photos-wrapper {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 180px 220px 180px auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 44px;
+  }
+  #featured-photos .photos-wrapper .box1 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  #featured-photos .photos-wrapper .box2 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  #featured-photos .photos-wrapper .box3 {
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  #featured-photos .photos-wrapper .box4 {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  #featured-photos .photos-wrapper .box5 {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  #featured-photos .photos-wrapper .box6 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  #featured-photos .photos-wrapper .box7 {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  #featured-photos .photos-wrapper .box8 {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  #featured-photos .photos-wrapper .box9 {
+    grid-column-start: 10;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  #featured-photos .photos-wrapper .box10 {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+}
 #featured-photos .photos-wrapper a {
   width: 100%;
   display: block;
-  margin-bottom: 6px;
 }
 #featured-photos .photos-wrapper a:last-child {
   margin-bottom: 0;
 }
 #featured-photos .photos-wrapper a figure {
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -297,30 +445,73 @@ button {
   display: block;
   margin: -6% 0;
 }
+@media screen and (min-width: 768px) {
+  #featured-photos .photos-wrapper a figure img {
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
 #featured-photos .photos-wrapper a figure figcaption {
+  width: 80%;
   position: absolute;
   bottom: 20px;
   left: 20px;
   z-index: 1;
   color: white;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  #featured-photos .photos-wrapper a figure figcaption {
+    font-size: 1.1em;
+  }
 }
 #featured-photos .photos-wrapper .btn-wrapper {
   margin-top: 14px;
 }
+@media screen and (min-width: 768px) {
+  #featured-photos .photos-wrapper .btn-wrapper {
+    display: flex;
+    margin: 45px auto 0;
+  }
+}
 #featured-photos .photos-wrapper .btn-wrapper button {
-  width: 100%;
-  margin-left: 0;
+  margin: 0 10px;
+}
+@media screen and (min-width: 768px) {
+  #featured-photos .photos-wrapper .btn-wrapper button {
+    padding: 9px 35px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #featured-photos .photos-wrapper .btn-wrapper .transparent-button {
+    padding: 9px 20px;
+  }
 }
 
 /* ==============================================
     Footer
 ============================================== */
 footer {
+  display: grid;
   padding: 22px;
   border-top: 1px solid #eee;
   color: #adb6be;
   font-size: 13px;
   line-height: 24px;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 40px;
+    padding: 44px;
+  }
+  footer .copyright {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
 }
 footer div {
   padding-bottom: 15px;
