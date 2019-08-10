@@ -85,7 +85,6 @@ a, button {
 
 button {
   width: 210px;
-  height: 45px;
   padding: 8px 9px 7px;
   border: 0;
   border-radius: 4px;
@@ -478,6 +477,12 @@ button {
 }
 #featured-photos .photos-wrapper .btn-wrapper button {
   margin: 0 10px;
+}
+@media screen and (max-width: 425px) {
+  #featured-photos .photos-wrapper .btn-wrapper button {
+    width: 100%;
+    margin: 5px 0 0 0;
+  }
 }
 @media screen and (min-width: 768px) {
   #featured-photos .photos-wrapper .btn-wrapper button {
