@@ -439,11 +439,6 @@ button {
             width: 100%;
             display: block;
 
-            // TODO vérifier pourquoi ne fonctionne pas.
-            &:last-child {
-                margin-bottom: 0;
-            }
-
             figure {
                 height: 100%;
                 position: relative;

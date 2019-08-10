@@ -421,9 +421,6 @@ button {
   width: 100%;
   display: block;
 }
-#featured-photos .photos-wrapper a:last-child {
-  margin-bottom: 0;
-}
 #featured-photos .photos-wrapper a figure {
   height: 100%;
   position: relative;
