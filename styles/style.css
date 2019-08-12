@@ -179,34 +179,60 @@ button {
     height: 28px;
   }
 }
-#hero #main-nav #nav-btn {
-  display: none;
-}
-#hero #main-nav .nav-menu {
-  max-width: 940px;
-  display: flex;
-  color: white;
-  font-size: 0.79em;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-#hero #main-nav .nav-menu a {
-  color: white;
-}
-#hero #main-nav .nav-menu .nav-element {
-  margin-left: 25px;
-  padding-bottom: 10px;
-  cursor: pointer;
-}
-#hero #main-nav .nav-menu .nav-element:hover {
-  border-bottom: 1px solid #ebebeb;
-}
-#hero #main-nav .nav-menu .nav-element i {
-  margin-left: 5px;
-}
-#hero #main-nav .nav-menu .nav-sub-menu {
-  display: none;
+@media screen and (min-width: 990px) {
+  #hero #main-nav #nav-btn {
+    display: none;
+  }
+  #hero #main-nav .nav-menu {
+    max-width: 940px;
+    display: flex;
+    color: white;
+    font-size: 0.79em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  #hero #main-nav .nav-menu .nav-element {
+    margin-left: 25px;
+    padding-bottom: 10px;
+    color: white;
+    cursor: pointer;
+  }
+  #hero #main-nav .nav-menu .nav-element:hover {
+    border-bottom: 1px solid #ebebeb;
+  }
+  #hero #main-nav .nav-menu .nav-element a {
+    color: inherit;
+  }
+  #hero #main-nav .nav-menu .nav-element i {
+    margin-left: 5px;
+  }
+  #hero #main-nav .nav-menu .nav-sub-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    background-color: white;
+  }
+  #hero #main-nav .nav-menu .nav-sub-menu .nav-element {
+    margin-left: 0;
+    padding: 10px;
+    color: black;
+    border-bottom: 0;
+  }
+  #hero #main-nav .nav-menu .nav-sub-menu .nav-element:hover {
+    color: white;
+    background-color: #3f69ee;
+  }
+  #hero #main-nav .nav-menu #home {
+    right: 500px;
+  }
+  #hero #main-nav .nav-menu #gallery {
+    right: 290px;
+  }
+  #hero #main-nav .nav-menu .active {
+    display: flex;
+  }
 }
 @media screen and (max-width: 989px) {
   #hero #main-nav #nav-btn {
@@ -259,6 +285,9 @@ button {
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
+  }
+  #hero #main-nav .nav-menu .nav-element a {
+    color: white;
   }
   #hero #main-nav .nav-menu .nav-sub-menu {
     display: none;
