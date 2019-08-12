@@ -210,6 +210,7 @@ button {
                     position: absolute;
                     top: 75px;
                     background-color: map-get($colors, "background");
+                    box-shadow: 8px 8px 13px 0 rgba(0, 0, 0, .2);
 
                     .nav-element {
                         margin-left: 0;

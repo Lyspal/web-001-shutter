@@ -215,6 +215,7 @@ button {
     position: absolute;
     top: 75px;
     background-color: white;
+    box-shadow: 8px 8px 13px 0 rgba(0, 0, 0, 0.2);
   }
   #hero #main-nav .nav-menu .nav-sub-menu .nav-element {
     margin-left: 0;
