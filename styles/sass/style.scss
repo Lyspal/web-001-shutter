@@ -11,7 +11,8 @@
 $layout-breaks: (
     mobile: 424px,
     tablet: 425px,
-    desktop: 768px
+    desktop: 768px,
+    large: 1024px
 );
 
 $colors: (
@@ -36,7 +37,9 @@ $padding: 22px;
 
 body {
     min-width: 320px;
+    max-width: 1440px;
     width: 100%;
+    margin: 0 auto;
     font-family: 'Lato', sans-serif;
     color: map-get($colors, "text-dark");
     font-size: 14px;
@@ -668,6 +671,11 @@ footer {
         padding-top: 20px;
         padding-bottom: 0;
         font-size: 12px;
+
+        @media screen and (min-width: map-get($layout-breaks, "large")) {
+            display: flex;
+            justify-content: space-between;
+        }
 
         a {
             color: map-get($colors, "text-medium2");;
