@@ -59,6 +59,12 @@ table {
 /* ==============================================
     Base
 ============================================== */
+:root {
+  font-size: 14px;
+  line-height: 20px;
+  background-color: white;
+}
+
 body {
   min-width: 320px;
   max-width: 1440px;
@@ -66,9 +72,6 @@ body {
   margin: 0 auto;
   font-family: "Lato", sans-serif;
   color: #333;
-  font-size: 14px;
-  line-height: 20px;
-  background-color: white;
 }
 
 .section-header {
@@ -94,7 +97,7 @@ button {
   padding: 8px 9px 7px;
   border: 0;
   border-radius: 4px;
-  font-size: 0.7em;
+  font-size: 0.714rem;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 1px;
@@ -153,7 +156,7 @@ button {
 }
 @media screen and (min-width: 972px) {
   #hero {
-    background-size: 100% auto;
+    background-size: cover;
   }
 }
 #hero #main-nav {

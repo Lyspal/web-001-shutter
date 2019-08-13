@@ -12,7 +12,8 @@ $layout-breaks: (
     mobile: 424px,
     tablet: 425px,
     desktop: 768px,
-    large: 1024px
+    large: 1024px,
+    4k: 2560px
 );
 
 $colors: (
@@ -35,6 +36,12 @@ $colors: (
 
 $padding: 22px;
 
+:root {
+    font-size: 14px;
+    line-height: 20px;
+    background-color: map-get($colors, "background");
+}
+
 body {
     min-width: 320px;
     max-width: 1440px;
@@ -42,9 +49,6 @@ body {
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
     color: map-get($colors, "text-dark");
-    font-size: 14px;
-    line-height: 20px;
-    background-color: map-get($colors, "background");
 }
 
 .section-header {
@@ -72,7 +76,7 @@ button {
     padding: 8px 9px 7px;
     border: 0;
     border-radius: 4px;
-    font-size: .7em;
+    font-size: .714rem;
     font-weight: 400;
     line-height: 21px;
     letter-spacing: 1px;
@@ -141,7 +145,7 @@ button {
         url(../images/hero.jpg) center / auto 100% no-repeat;
 
         @media screen and (min-width: 972px) {
-            background-size: 100% auto;
+            background-size: cover;
         }
 
     #main-nav {
