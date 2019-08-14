@@ -9,123 +9,120 @@
 ============================================== */
 
 $layout-breaks: (
-    mobile: 424px,
-    tablet: 425px,
-    desktop: 768px,
-    large: 1024px,
-    4k: 2560px
+  mobile: 424px,
+  tablet: 425px,
+  desktop: 768px,
+  large: 1024px,
+  4k: 2560px
 );
 
 $colors: (
-    // Palette
-    dominant: #3f69ee,
-    accent1: #59a0e8,
-    accent2: #2d3553,
-    background: white,
-    // Misc colors
-    background-photos: #f5f7f8,
-    background-menu: black,
-    background-submenu: #333,
-    text-light: white,
-    text-medium1: #adb6be,
-    text-medium2: #7a8792,
-    text-dark: #333,
-    border: #ebebeb,
-    border-btn: #d9dadd
+  // Palette
+  dominant: #3f69ee,
+  accent1: #59a0e8,
+  accent2: #2d3553,
+  background: white,
+  // Misc colors
+  background-photos: #f5f7f8,
+  background-menu: black,
+  background-submenu: #333,
+  text-light: white,
+  text-medium1: #adb6be,
+  text-medium2: #7a8792,
+  text-dark: #333,
+  border: #ebebeb,
+  border-btn: #d9dadd
 );
 
 $padding: 22px;
 
 :root {
-    font-size: 100%;        // Browser usually defaults to 16px.
-    line-height: 1.4;
-    background-color: map-get($colors, "background");
+  font-size: 100%;        // Browser usually defaults to 16px.
+  line-height: 1.4;
+  background-color: map-get($colors, "background");
 }
 
 body {
-    min-width: 320px;
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    font-family: 'Lato', sans-serif;
-    color: map-get($colors, "text-dark");
-    font-weight: 100;
+  min-width: 320px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  color: map-get($colors, "text-dark");
+  font-weight: 100;
 }
 
 .section-header {
-    padding: $padding;
-    text-align: center;
+  padding: $padding;
+  text-align: center;
 
-    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-        padding: $padding * 2;
-    }
+  @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+    padding: $padding * 2;
+  }
 }
 
-a, button {
-    cursor: pointer;
-}
+a,
+button { cursor: pointer; }
 
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
 
 //  Buttons
 // ==============================================
 
 button {
-    width: 230px;
-    padding: 1em;
-    border: 0;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    line-height: 1.4;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+  width: 230px;
+  padding: 1em;
+  border: 0;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
-    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-        width: 220px;
-        font-size: 1em;
-    }
+  @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+    width: 220px;
+    font-size: 1em;
+  }
 }
 
 .dark-button {
-    background-color: map-get($colors, "dominant");
-    color: map-get($colors, "text-light");
+  background-color: map-get($colors, "dominant");
+  color: map-get($colors, "text-light");
 
-    &:hover {
-        background-color: map-get($colors, "accent1");
-    }
+  &:hover {
+    background-color: map-get($colors, "accent1");
+  }
 }
 
 .light-button {
-    background-color: map-get($colors, "background");
-    color: map-get($colors, "dominant");
+  background-color: map-get($colors, "background");
+  color: map-get($colors, "dominant");
 
-    &:hover {
-        background-color: map-get($colors, "accent2");
-        color: map-get($colors, "text-light");
-    }
+  &:hover {
+    background-color: map-get($colors, "accent2");
+    color: map-get($colors, "text-light");
+  }
 }
 
 .transparent-button {
-    border: 1px solid map-get($colors, "border-btn");
-    background-color: transparent;
-    color: map-get($colors, "text-dark");
+  border: 1px solid map-get($colors, "border-btn");
+  background-color: transparent;
+  color: map-get($colors, "text-dark");
 
-    &:hover {
-        background-color: map-get($colors, "accent1");
-        color: map-get($colors, "text-light");
-    }
+  &:hover {
+    background-color: map-get($colors, "accent1");
+    color: map-get($colors, "text-light");
+  }
 }
 
 //  Common Effects
 // ==============================================
 
 %text-shadow {
-    text-shadow: 1px 1px 16px rgba(0, 0, 0, .2);
+  text-shadow: 1px 1px 16px rgba(0, 0, 0, .2);
 }
 
 /* ==============================================
@@ -133,275 +130,258 @@ button {
 ============================================== */
 
 #hero {
-    height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(
+      rgba($color: #000, $alpha: 0.2),
+      rgba($color: #000, $alpha: 0.2)
+    ),
+    url(../images/hero.jpg) center / auto 100% no-repeat;
+
+    @media screen and (min-width: 972px) {
+      background-size: cover;
+    }
+
+  #main-nav {
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    background:
-        linear-gradient(
-            rgba($color: #000, $alpha: 0.2),
-            rgba($color: #000, $alpha: 0.2)
-        ),
-        url(../images/hero.jpg) center / auto 100% no-repeat;
 
-        @media screen and (min-width: 972px) {
-            background-size: cover;
-        }
+    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+      height: 110px;
+      padding: 30px 40px;;
+    }
 
-    #main-nav {
-        width: 100%;
-        height: 60px;
-        padding: 10px 20px;
+    #logo {
+      max-width: 100%;
+      height:15px;
+      display: inline-block;
+      vertical-align: middle;
+
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        height: 28px;
+      }
+    }
+
+    //  Regular menu for desktop
+    // ==============================================
+
+    @media screen and (min-width: 990px) {
+      #nav-btn {
+        display: none;
+      }
+
+      .nav-menu {
+        max-width: 940px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        color: map-get($colors, "text-light");
+        font-weight: 300;
+        text-transform: uppercase;
+
+        .nav-element {
+          margin-left: 25px;
+          padding-bottom: 10px;
+          color: map-get($colors, "text-light");
+          cursor: pointer;
+
+          &:hover {
+            border-bottom: 1px solid map-get($colors, "border");
+          }
+
+          a { color: inherit; }
+
+          i { margin-left: 5px; }
+        }
+
+        .nav-sub-menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 75px;
+          background-color: map-get($colors, "background");
+          box-shadow: 8px 8px 13px 0 rgba(0, 0, 0, .2);
+
+          .nav-element {
+            margin-left: 0;
+            padding: 10px;
+            color: black;
+            border-bottom: 0;
+
+            &:hover {
+              color: map-get($colors, "text-light");
+              background-color: map-get($colors, "dominant");
+            }
+          }
+        }
+
+        // Workaround for positionning submenus.
+        #home { right: 500px; }
+
+        #gallery { right: 290px; }
+
+        .active { display: flex; }
+      }
+    }
+
+    //  Toggling menu for mobile
+    // ==============================================
+
+    @media screen and (max-width: 989px) {
+      #nav-btn {
+        color: map-get($colors, "text-light");
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border: 1px solid map-get($colors, "background");
+        border-radius: 3px;
 
         @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-            height: 110px;
-            padding: 30px 40px;;
+          width: 50px;
+          height: 50px;
         }
 
-        #logo {
-            max-width: 100%;
-            height:15px;
-            display: inline-block;
-            vertical-align: middle;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                height: 28px;
-            }
+        &:hover {
+          color: black;
+          background-color:  map-get($colors, "background");
         }
 
-        //  Regular menu for desktop
-        // ==============================================
+        i { margin: auto; }
+      }
 
-        @media screen and (min-width: 990px) {
-            #nav-btn {
-                display: none;
-            }
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        background-color: map-get($colors, "background-menu");
+        transition: right .2s ease-in-out;
 
-            .nav-menu {
-                max-width: 940px;
-                display: flex;
-                color: map-get($colors, "text-light");
-                font-weight: 300;
-                text-transform: uppercase;
+        .nav-element {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 40px;
+          padding: 10px 25px;
+          color: map-get($colors, "text-light");
+          font-size: .875em;
+          font-weight: 300;
+          text-transform: uppercase;
+          cursor: pointer;
 
-                .nav-element {
-                    margin-left: 25px;
-                    padding-bottom: 10px;
-                    color: map-get($colors, "text-light");
-                    cursor: pointer;
+          a {
+              color: map-get($colors, "text-light");
+          }
+        } 
 
-                    &:hover {
-                        border-bottom: 1px solid map-get($colors, "border");
-                    }
-
-                    a {
-                        color: inherit;
-                    }
-
-                    i {
-                        margin-left: 5px;
-                    }
-                }
-
-                .nav-sub-menu {
-                    display: none;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 75px;
-                    background-color: map-get($colors, "background");
-                    box-shadow: 8px 8px 13px 0 rgba(0, 0, 0, .2);
-
-                    .nav-element {
-                        margin-left: 0;
-                        padding: 10px;
-                        color: black;
-                        border-bottom: 0;
-
-                        &:hover {
-                            color: map-get($colors, "text-light");
-                            background-color: map-get($colors, "dominant");
-                        }
-                    }
-                }
-
-                // Workaround for positionning submenus.
-                #home {
-                    right: 500px;
-                }
-
-                #gallery {
-                    right: 290px;
-                }
-
-                .active {
-                    display: flex;
-                }
-            }
+        .nav-sub-menu {
+          display: none;
+          flex-direction: column;
         }
 
-        //  Toggling menu for mobile
-        // ==============================================
+        // Sub menu show/hide
+        .active { display: flex; }
 
-        @media screen and (max-width: 989px) {
-            #nav-btn {
-                color: map-get($colors, "text-light");
-                display: flex;
-                width: 40px;
-                height: 40px;
-                border: 1px solid map-get($colors, "background");
-                border-radius: 3px;
-
-                @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                    width: 50px;
-                    height: 50px;
-                }
-        
-                &:hover {
-                    color: black;
-                    background-color:  map-get($colors, "background");
-                }
-
-                i {
-                    margin: auto;
-                }
-            }
-
-            .nav-menu {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                right: -200px;
-                width: 200px;
-                height: 100vh;
-                background-color: map-get($colors, "background-menu");
-                transition: right .2s ease-in-out;
-
-                .nav-element {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    height: 40px;
-                    padding: 10px 25px;
-                    color: map-get($colors, "text-light");
-                    font-size: .875em;
-                    font-weight: 300;
-                    text-transform: uppercase;
-                    cursor: pointer;
-
-                    a {
-                        color: map-get($colors, "text-light");
-                    }
-                }
-
-                .nav-sub-menu {
-                    display: none;
-                    flex-direction: column;
-                }
-
-                // Sub menu show/hide
-                .active {
-                    display: flex;
-                }
-
-                .nav-sub-menu .nav-element {
-                    height: 35px;
-                    padding-left: 15px;
-                    background-color: map-get($colors, "background-submenu");
-                }
-
-                .nav-element:hover {
-                    background-color: map-get($colors, "dominant");
-                }
-            }
-
-            // Navigation menu show/hide
-            .active {
-                right: 0;
-            }
+        .nav-sub-menu .nav-element {
+          height: 35px;
+          padding-left: 15px;
+          background-color: map-get($colors, "background-submenu");
         }
+
+        .nav-element:hover {
+          background-color: map-get($colors, "dominant");
+        }
+      }
+
+      // Navigation menu show/hide
+      .active { right: 0; }
+    }
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 0 10px 20px;
+    color: map-get($colors, "text-light");
+
+    h1 {
+      font-size: 2em;
+      font-weight: 500;
+      line-height: 1.2;
+      @extend %text-shadow;
+      animation: 500ms ease fade-in-up-on-load;
+
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        font-size: 3em;
+      }
     }
 
-    .hero-content {
-        text-align: center;
-        padding: 0 10px 20px;
-        color: map-get($colors, "text-light");
+    h2 {
+      margin: 10px 0;
+      line-height: 1.4;
+      @extend %text-shadow;
+      animation: 500ms ease fade-in-down-on-load 500ms backwards;
 
-        h1 {
-            font-size: 2em;
-            font-weight: 500;
-            line-height: 1.2;
-            @extend %text-shadow;
-            animation: 500ms ease fade-in-up-on-load;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                font-size: 3em;
-            }
-        }
-
-        h2 {
-            margin: 10px 0;
-            line-height: 1.4;
-            @extend %text-shadow;
-            animation: 500ms ease fade-in-down-on-load 500ms backwards;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                padding: 10px 0;
-                font-size: 1.4em;
-            }
-        }
-
-        button {
-            margin-top: 6px;
-            margin-right: 8px;
-            margin-left: 8px;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                margin: 20px 8px 0;
-
-            }
-        }
-
-        .dark-button {
-            animation: 500ms ease appears 1s backwards;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                width: 265px;
-            }
-        }
-        
-        .light-button {
-            animation: 500ms ease appears 1.1s backwards;
-        }
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        padding: 10px 0;
+        font-size: 1.4em;
+      }
     }
 
-    .photographer-block {
-        $padding: 10px;
-        padding-right: $padding * 3;
-        padding-bottom: $padding * 2;
-        color: map-get($colors, "text-light");
-        font-size: 0.75em;
-        text-align: right;
+    button {
+      margin-top: 6px;
+      margin-right: 8px;
+      margin-left: 8px;
 
-        @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-            padding-right: $padding * 5;
-            padding-bottom: $padding *4;
-            font-size: 1em;
-        }
-
-        a {
-            color: map-get($colors, "text-light");
-            font-weight: 700;
-            text-decoration: none;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                margin-left: 5px;
-            }
-        }
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        margin: 20px 8px 0;
+      }
     }
+
+    .dark-button {
+      animation: 500ms ease appears 1s backwards;
+
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        width: 265px;
+      }
+    }
+    
+    .light-button {
+      animation: 500ms ease appears 1.1s backwards;
+    }
+  }
+
+  .photographer-block {
+    $padding: 10px;
+    padding-right: $padding * 3;
+    padding-bottom: $padding * 2;
+    color: map-get($colors, "text-light");
+    font-size: 0.75em;
+    text-align: right;
+
+    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+      padding-right: $padding * 5;
+      padding-bottom: $padding *4;
+      font-size: 1em;
+    }
+
+    a {
+      color: map-get($colors, "text-light");
+      font-weight: 700;
+      text-decoration: none;
+
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        margin-left: 5px;
+      }
+    }
+  }
 }
 
 
@@ -410,194 +390,194 @@ button {
 ============================================== */
 
 #featured-photos {
-    .section-header .is-visible {
-        animation: 500ms ease fade-in-up-on-load;
+  .section-header .is-visible {
+    animation: 500ms ease fade-in-up-on-load;
+  }
+
+  h2 {
+    font-size: 1.75em;
+    line-height: 1.2;
+
+    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+      font-size: 2.4em;
+    }
+  }
+
+  h3 {
+    margin-top: 1em;
+    color: map-get($colors, "text-medium1");
+    font-size: 1em;
+    line-height: 1.4;
+
+    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+      font-size: 1.5em;
+    }
+  }
+
+  .photos-wrapper {
+    display: grid;
+    row-gap: 6px;
+    padding: $padding;
+    text-align: center;
+    border-top: 1px solid map-get($colors, "border");
+    background-color: map-get($colors, "background-photos");
+
+    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 180px 220px 180px auto;
+        column-gap: 10px;
+        row-gap: 10px;
+        padding: $padding * 2;
+
+        .box1 {
+          grid-column-start: 1;
+          grid-column-end: 5;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+
+        .box2 {
+          grid-column-start: 5;
+          grid-column-end: 9;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+
+        .box3 {
+          grid-column-start: 9;
+          grid-column-end: 13;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+
+        .box4 {
+          grid-column-start: 1;
+          grid-column-end: 7;
+          grid-row-start: 2;
+          grid-row-end: 3;
+        }
+
+        .box5 {
+          grid-column-start: 7;
+          grid-column-end: 13;
+          grid-row-start: 2;
+          grid-row-end: 3;
+        }
+
+        .box6 {
+          grid-column-start: 1;
+          grid-column-end: 4;
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+
+        .box7 {
+          grid-column-start: 4;
+          grid-column-end: 7;
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+
+        .box8 {
+          grid-column-start: 7;
+          grid-column-end: 10;
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+
+        .box9 {
+          grid-column-start: 10;
+          grid-column-end: 13;
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+
+        .box10 {
+          grid-column-start: 1;
+          grid-column-end: 13;
+          grid-row-start: 4;
+          grid-row-end: 5;
+        }
     }
 
-    h2 {
-        font-size: 1.75em;
-        line-height: 1.2;
+    a {
+      width: 100%;
+      display: block;
+
+      figure {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .7) 100%);
+        }
+
+        img {
+          width: 100%;
+          display: block;
+          margin: -6% 0;
+
+          @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+            height: 100%;
+            margin: 0;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        figcaption {
+          width: 80%;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          z-index: 1;
+          color: map-get($colors, "text-light");
+          font-weight: 500;
+          text-align: left;
+
+          @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+
+    .btn-wrapper {
+      margin-top: 14px;
+
+      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+        display: flex;
+        margin: 45px auto 0;
+      }
+
+      button {
+        margin: 0 10px;
+
+        @media screen and (max-width: 425px) {
+          width: 100%;
+          margin: 5px 0 0 0;
+        }
 
         @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-            font-size: 2.4em;
+          padding: 9px 35px;
         }
-    }
+      }
 
-    h3 {
-        margin-top: 1em;
-        color: map-get($colors, "text-medium1");
-        font-size: 1em;
-        line-height: 1.4;
-
+      .transparent-button {
         @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-            font-size: 1.5em;
+          padding: 9px 20px;
         }
+      }
     }
-
-    .photos-wrapper {
-        display: grid;
-        row-gap: 6px;
-        padding: $padding;
-        text-align: center;
-        border-top: 1px solid map-get($colors, "border");
-        background-color: map-get($colors, "background-photos");
-
-        @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: 180px 220px 180px auto;
-            column-gap: 10px;
-            row-gap: 10px;
-            padding: $padding * 2;
-
-            .box1 {
-                grid-column-start: 1;
-                grid-column-end: 5;
-                grid-row-start: 1;
-                grid-row-end: 2;
-            }
-
-            .box2 {
-                grid-column-start: 5;
-                grid-column-end: 9;
-                grid-row-start: 1;
-                grid-row-end: 2;
-            }
-
-            .box3 {
-                grid-column-start: 9;
-                grid-column-end: 13;
-                grid-row-start: 1;
-                grid-row-end: 2;
-            }
-
-            .box4 {
-                grid-column-start: 1;
-                grid-column-end: 7;
-                grid-row-start: 2;
-                grid-row-end: 3;
-            }
-
-            .box5 {
-                grid-column-start: 7;
-                grid-column-end: 13;
-                grid-row-start: 2;
-                grid-row-end: 3;
-            }
-
-            .box6 {
-                grid-column-start: 1;
-                grid-column-end: 4;
-                grid-row-start: 3;
-                grid-row-end: 4;
-            }
-
-            .box7 {
-                grid-column-start: 4;
-                grid-column-end: 7;
-                grid-row-start: 3;
-                grid-row-end: 4;
-            }
-
-            .box8 {
-                grid-column-start: 7;
-                grid-column-end: 10;
-                grid-row-start: 3;
-                grid-row-end: 4;
-            }
-
-            .box9 {
-                grid-column-start: 10;
-                grid-column-end: 13;
-                grid-row-start: 3;
-                grid-row-end: 4;
-            }
-
-            .box10 {
-                grid-column-start: 1;
-                grid-column-end: 13;
-                grid-row-start: 4;
-                grid-row-end: 5;
-            }
-        }
-
-        a {
-            width: 100%;
-            display: block;
-
-            figure {
-                height: 100%;
-                position: relative;
-                overflow: hidden;
-
-                &::after {
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .7) 100%);
-                }
-
-                img {
-                    width: 100%;
-                    display: block;
-                    margin: -6% 0;
-
-                    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                        height: 100%;
-                        margin: 0;
-                        object-fit: cover;
-                        object-position: center;
-                    }
-                }
-    
-                figcaption {
-                    width: 80%;
-                    position: absolute;
-                    bottom: 20px;
-                    left: 20px;
-                    z-index: 1;
-                    color: map-get($colors, "text-light");
-                    font-weight: 500;
-                    text-align: left;
-
-                    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                        font-size: 1.1em;
-                    }
-                }
-            }
-        }
-
-        .btn-wrapper {
-            margin-top: 14px;
-
-            @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                display: flex;
-                margin: 45px auto 0;
-            }
-
-            button {
-                margin: 0 10px;
-
-                @media screen and (max-width: 425px) {
-                    width: 100%;
-                    margin: 5px 0 0 0;
-                }
-
-                @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                    padding: 9px 35px;
-                }
-            }
-
-            .transparent-button {
-                @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-                    padding: 9px 20px;
-                }
-            }
-        }
-    }
+  }
 }
 
 /* ==============================================
@@ -605,83 +585,79 @@ button {
 ============================================== */
 
 footer {
-    display: grid;
-    padding: $padding;
-    border-top: 1px solid #eee;
-    color: map-get($colors, "text-medium1");
-    font-size: 0.875em;
-    line-height: 1.5;
+  display: grid;
+  padding: $padding;
+  border-top: 1px solid #eee;
+  color: map-get($colors, "text-medium1");
+  font-size: 0.875em;
+  line-height: 1.5;
 
-    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        column-gap: 40px;
-        padding: $padding * 2;
-
-        .copyright {
-            grid-column-start: 1;
-            grid-column-end: 5;
-        }
-    }
-
-    div {
-        padding-bottom: 15px;
-    }
-
-    h2 {
-        margin-bottom: 10px;
-        color: #000;
-        font-size: 1em;
-        font-weight: 400;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    p {
-        display: block;
-    }
-
-    li {
-        display: flex;
-        margin-bottom: .5em;
-
-        i {
-            width: 15px;
-            color: #000;
-            margin-right: 10px;
-        }
-
-        a:hover {
-            color: map-get($colors, "dominant");
-            text-decoration: underline;
-        }
-    }
+  @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 40px;
+    padding: $padding * 2;
 
     .copyright {
-        margin-top: 20px;
-        border-top: 1px solid rgba(0, 0, 0, .06);
-        padding-top: 20px;
-        padding-bottom: 0;
-        font-size: .75em;
-
-        @media screen and (min-width: map-get($layout-breaks, "large")) {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        p:last-child {
-            margin-top: 1em;
-        }
-
-        a {
-            color: map-get($colors, "text-medium2");;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+      grid-column-start: 1;
+      grid-column-end: 5;
     }
+  }
+
+  div { padding-bottom: 15px; }
+
+  h2 {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  p { display: block; }
+
+  li {
+    display: flex;
+    margin-bottom: .5em;
+
+    i {
+      width: 15px;
+      color: #000;
+      margin-right: 10px;
+    }
+
+    a:hover {
+        color: map-get($colors, "dominant");
+        text-decoration: underline;
+    }
+  }
+
+  .copyright {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, .06);
+    padding-top: 20px;
+    padding-bottom: 0;
+    font-size: .75em;
+
+    @media screen and (min-width: map-get($layout-breaks, "large")) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    p:last-child {
+      margin-top: 1em;
+    }
+
+    a {
+      color: map-get($colors, "text-medium2");;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 /* ==============================================
@@ -689,35 +665,35 @@ footer {
 ============================================== */
 
 @keyframes fade-in-up-on-load {
-    from {
-        opacity: 0;
-        transform: translate(0px, 10px);
-    }
+  from {
+    opacity: 0;
+    transform: translate(0px, 10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes fade-in-down-on-load {
-    0% {
-        opacity: 0;
-        transform: translate(0px, -10px);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(0px, -10px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes appears {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }

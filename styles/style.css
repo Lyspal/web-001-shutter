@@ -85,7 +85,8 @@ body {
   }
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
