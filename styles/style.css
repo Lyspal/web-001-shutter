@@ -71,8 +71,8 @@ body {
   width: 100%;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
-  color: #333;
   font-weight: 100;
+  color: #333;
 }
 
 .section-header {
@@ -97,14 +97,14 @@ a {
 button {
   width: 230px;
   padding: 1em;
-  border: 0;
-  border-radius: 4px;
   font-size: 0.75rem;
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
+  border: 0;
+  border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 @media screen and (min-width: 768px) {
@@ -115,30 +115,30 @@ button {
 }
 
 .dark-button {
-  background-color: #3f69ee;
   color: white;
+  background-color: #3f69ee;
 }
 .dark-button:hover {
   background-color: #59a0e8;
 }
 
 .light-button {
-  background-color: white;
   color: #3f69ee;
+  background-color: white;
 }
 .light-button:hover {
-  background-color: #2d3553;
   color: white;
+  background-color: #2d3553;
 }
 
 .transparent-button {
-  border: 1px solid #d9dadd;
-  background-color: transparent;
   color: #333;
+  background-color: transparent;
+  border: 1px solid #d9dadd;
 }
 .transparent-button:hover {
-  background-color: #59a0e8;
   color: white;
+  background-color: #59a0e8;
 }
 
 #hero .hero-content h2, #hero .hero-content h1 {
@@ -149,10 +149,10 @@ button {
     Hero Header
 ============================================== */
 #hero {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/hero.jpg) center/auto 100% no-repeat;
 }
 @media screen and (min-width: 972px) {
@@ -161,12 +161,12 @@ button {
   }
 }
 #hero #main-nav {
-  width: 100%;
-  height: 60px;
-  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 10px 20px;
 }
 @media screen and (min-width: 768px) {
   #hero #main-nav {
@@ -175,9 +175,9 @@ button {
   }
 }
 #hero #main-nav #logo {
+  display: inline-block;
   max-width: 100%;
   height: 15px;
-  display: inline-block;
   vertical-align: middle;
 }
 @media screen and (min-width: 768px) {
@@ -190,10 +190,10 @@ button {
     display: none;
   }
   #hero #main-nav .nav-menu {
-    max-width: 940px;
     display: flex;
-    color: white;
+    max-width: 940px;
     font-weight: 300;
+    color: white;
     text-transform: uppercase;
   }
   #hero #main-nav .nav-menu .nav-element {
@@ -212,10 +212,10 @@ button {
     margin-left: 5px;
   }
   #hero #main-nav .nav-menu .nav-sub-menu {
-    display: none;
-    flex-direction: column;
     position: absolute;
     top: 75px;
+    display: none;
+    flex-direction: column;
     background-color: white;
     box-shadow: 8px 8px 13px 0 rgba(0, 0, 0, 0.2);
   }
@@ -241,10 +241,10 @@ button {
 }
 @media screen and (max-width: 989px) {
   #hero #main-nav #nav-btn {
-    color: white;
     display: flex;
     width: 40px;
     height: 40px;
+    color: white;
     border: 1px solid white;
     border-radius: 3px;
   }
@@ -268,11 +268,11 @@ button {
 }
 @media screen and (max-width: 989px) {
   #hero #main-nav .nav-menu {
-    display: flex;
-    flex-direction: column;
     position: fixed;
     top: 0;
     right: -200px;
+    display: flex;
+    flex-direction: column;
     width: 200px;
     height: 100vh;
     background-color: black;
@@ -284,9 +284,9 @@ button {
     justify-content: space-between;
     height: 40px;
     padding: 10px 25px;
-    color: white;
     font-size: 0.875em;
     font-weight: 300;
+    color: white;
     text-transform: uppercase;
     cursor: pointer;
   }
@@ -315,14 +315,14 @@ button {
   }
 }
 #hero .hero-content {
-  text-align: center;
   padding: 0 10px 20px;
   color: white;
+  text-align: center;
 }
 #hero .hero-content h1 {
   font-size: 2em;
-  font-weight: 500;
   line-height: 1.2;
+  font-weight: 500;
   animation: 500ms ease fade-in-up-on-load;
 }
 @media screen and (min-width: 768px) {
@@ -365,8 +365,8 @@ button {
 #hero .photographer-block {
   padding-right: 30px;
   padding-bottom: 20px;
-  color: white;
   font-size: 0.75em;
+  color: white;
   text-align: right;
 }
 @media screen and (min-width: 768px) {
@@ -418,8 +418,8 @@ button {
   row-gap: 6px;
   padding: 22px;
   text-align: center;
-  border-top: 1px solid #ebebeb;
   background-color: #f5f7f8;
+  border-top: 1px solid #ebebeb;
 }
 @media screen and (min-width: 768px) {
   #featured-photos .photos-wrapper {
@@ -491,27 +491,27 @@ button {
   }
 }
 #featured-photos .photos-wrapper a {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 #featured-photos .photos-wrapper a figure {
-  height: 100%;
   position: relative;
+  height: 100%;
   overflow: hidden;
 }
 #featured-photos .photos-wrapper a figure::after {
   content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
 }
 #featured-photos .photos-wrapper a figure img {
-  width: 100%;
   display: block;
+  width: 100%;
   margin: -6% 0;
 }
 @media screen and (min-width: 768px) {
@@ -523,11 +523,11 @@ button {
   }
 }
 #featured-photos .photos-wrapper a figure figcaption {
-  width: 80%;
   position: absolute;
   bottom: 20px;
   left: 20px;
   z-index: 1;
+  width: 80%;
   color: white;
   font-weight: 500;
   text-align: left;
@@ -572,10 +572,10 @@ button {
 footer {
   display: grid;
   padding: 22px;
-  border-top: 1px solid #eee;
-  color: #adb6be;
   font-size: 0.875em;
   line-height: 1.5;
+  color: #adb6be;
+  border-top: 1px solid #eee;
 }
 @media screen and (min-width: 768px) {
   footer {
@@ -594,8 +594,8 @@ footer div {
 }
 footer h2 {
   margin-bottom: 10px;
-  color: #000;
   font-size: 1em;
+  color: #000;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -609,8 +609,8 @@ footer li {
 }
 footer li i {
   width: 15px;
-  color: #000;
   margin-right: 10px;
+  color: #000;
 }
 footer li a:hover {
   color: #3f69ee;
@@ -618,10 +618,10 @@ footer li a:hover {
 }
 footer .copyright {
   margin-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding-top: 20px;
   padding-bottom: 0;
   font-size: 0.75em;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 @media screen and (min-width: 1024px) {
   footer .copyright {

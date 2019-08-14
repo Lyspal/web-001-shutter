@@ -48,8 +48,8 @@ body {
   width: 100%;
   margin: 0 auto;
   font-family: 'Lato', sans-serif;
-  color: map-get($colors, "text-dark");
   font-weight: 100;
+  color: map-get($colors, "text-dark");
 }
 
 .section-header {
@@ -72,15 +72,15 @@ a { text-decoration: none; }
 button {
   width: 230px;
   padding: 1em;
-  border: 0;
-  border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: .75rem;
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 0;
+  border-radius: 4px;
+  transition: background-color .2s ease, color .2s ease;
 
   @media screen and (min-width: map-get($layout-breaks, "desktop")) {
     width: 220px;
@@ -89,8 +89,8 @@ button {
 }
 
 .dark-button {
-  background-color: map-get($colors, "dominant");
   color: map-get($colors, "text-light");
+  background-color: map-get($colors, "dominant");
 
   &:hover {
     background-color: map-get($colors, "accent1");
@@ -98,23 +98,23 @@ button {
 }
 
 .light-button {
-  background-color: map-get($colors, "background");
   color: map-get($colors, "dominant");
+  background-color: map-get($colors, "background");
 
   &:hover {
-    background-color: map-get($colors, "accent2");
     color: map-get($colors, "text-light");
+    background-color: map-get($colors, "accent2");
   }
 }
 
 .transparent-button {
-  border: 1px solid map-get($colors, "border-btn");
-  background-color: transparent;
   color: map-get($colors, "text-dark");
+  background-color: transparent;
+  border: 1px solid map-get($colors, "border-btn");
 
   &:hover {
-    background-color: map-get($colors, "accent1");
     color: map-get($colors, "text-light");
+    background-color: map-get($colors, "accent1");
   }
 }
 
@@ -130,14 +130,14 @@ button {
 ============================================== */
 
 #hero {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
   background:
     linear-gradient(
-      rgba($color: #000, $alpha: 0.2),
-      rgba($color: #000, $alpha: 0.2)
+      rgba($color: #000, $alpha: .2),
+      rgba($color: #000, $alpha: .2)
     ),
     url(../images/hero.jpg) center / auto 100% no-repeat;
 
@@ -146,12 +146,12 @@ button {
     }
 
   #main-nav {
-    width: 100%;
-    height: 60px;
-    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
       height: 110px;
@@ -159,9 +159,9 @@ button {
     }
 
     #logo {
+      display: inline-block;
       max-width: 100%;
       height:15px;
-      display: inline-block;
       vertical-align: middle;
 
       @media screen and (min-width: map-get($layout-breaks, "desktop")) {
@@ -178,10 +178,10 @@ button {
       }
 
       .nav-menu {
-        max-width: 940px;
         display: flex;
-        color: map-get($colors, "text-light");
+        max-width: 940px;
         font-weight: 300;
+        color: map-get($colors, "text-light");
         text-transform: uppercase;
 
         .nav-element {
@@ -200,10 +200,10 @@ button {
         }
 
         .nav-sub-menu {
-          display: none;
-          flex-direction: column;
           position: absolute;
           top: 75px;
+          display: none;
+          flex-direction: column;
           background-color: map-get($colors, "background");
           box-shadow: 8px 8px 13px 0 rgba(0,0,0,.2);
 
@@ -234,10 +234,10 @@ button {
 
     @media screen and (max-width: 989px) {
       #nav-btn {
-        color: map-get($colors, "text-light");
         display: flex;
         width: 40px;
         height: 40px;
+        color: map-get($colors, "text-light");
         border: 1px solid map-get($colors, "background");
         border-radius: 3px;
 
@@ -255,11 +255,11 @@ button {
       }
 
       .nav-menu {
-        display: flex;
-        flex-direction: column;
         position: fixed;
         top: 0;
         right: -200px;
+        display: flex;
+        flex-direction: column;
         width: 200px;
         height: 100vh;
         background-color: map-get($colors, "background-menu");
@@ -271,9 +271,9 @@ button {
           justify-content: space-between;
           height: 40px;
           padding: 10px 25px;
-          color: map-get($colors, "text-light");
           font-size: .875em;
           font-weight: 300;
+          color: map-get($colors, "text-light");
           text-transform: uppercase;
           cursor: pointer;
 
@@ -307,14 +307,14 @@ button {
   }
 
   .hero-content {
-    text-align: center;
     padding: 0 10px 20px;
     color: map-get($colors, "text-light");
+    text-align: center;
 
     h1 {
       font-size: 2em;
-      font-weight: 500;
       line-height: 1.2;
+      font-weight: 500;
       @extend %text-shadow;
       animation: 500ms ease fade-in-up-on-load;
 
@@ -360,15 +360,16 @@ button {
 
   .photographer-block {
     $padding: 10px;
+
     padding-right: $padding * 3;
     padding-bottom: $padding * 2;
+    font-size: .75em;
     color: map-get($colors, "text-light");
-    font-size: 0.75em;
     text-align: right;
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
       padding-right: $padding * 5;
-      padding-bottom: $padding *4;
+      padding-bottom: $padding * 4;
       font-size: 1em;
     }
 
@@ -419,8 +420,8 @@ button {
     row-gap: 6px;
     padding: $padding;
     text-align: center;
-    border-top: 1px solid map-get($colors, "border");
     background-color: map-get($colors, "background-photos");
+    border-top: 1px solid map-get($colors, "border");
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
         grid-template-columns: repeat(12, 1fr);
@@ -501,28 +502,28 @@ button {
     }
 
     a {
-      width: 100%;
       display: block;
+      width: 100%;
 
       figure {
-        height: 100%;
         position: relative;
+        height: 100%;
         overflow: hidden;
 
         &::after {
           content: '';
-          width: 100%;
-          height: 100%;
-          display: block;
           position: absolute;
           top: 0;
           left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
           background-image: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,.7) 100%);
         }
 
         img {
-          width: 100%;
           display: block;
+          width: 100%;
           margin: -6% 0;
 
           @media screen and (min-width: map-get($layout-breaks, "desktop")) {
@@ -534,11 +535,11 @@ button {
         }
 
         figcaption {
-          width: 80%;
           position: absolute;
           bottom: 20px;
           left: 20px;
           z-index: 1;
+          width: 80%;
           color: map-get($colors, "text-light");
           font-weight: 500;
           text-align: left;
@@ -587,10 +588,10 @@ button {
 footer {
   display: grid;
   padding: $padding;
-  border-top: 1px solid #eee;
-  color: map-get($colors, "text-medium1");
-  font-size: 0.875em;
+  font-size: .875em;
   line-height: 1.5;
+  color: map-get($colors, "text-medium1");
+  border-top: 1px solid #eee;
 
   @media screen and (min-width: map-get($layout-breaks, "desktop")) {
     grid-template-columns: repeat(4, 1fr);
@@ -608,8 +609,8 @@ footer {
 
   h2 {
     margin-bottom: 10px;
-    color: #000;
     font-size: 1em;
+    color: #000;
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -623,8 +624,8 @@ footer {
 
     i {
       width: 15px;
-      color: #000;
       margin-right: 10px;
+      color: #000;
     }
 
     a:hover {
@@ -635,10 +636,10 @@ footer {
 
   .copyright {
     margin-top: 20px;
-    border-top: 1px solid rgba(0,0,0,.06);
     padding-top: 20px;
     padding-bottom: 0;
     font-size: .75em;
+    border-top: 1px solid rgba(0,0,0,.06);
 
     @media screen and (min-width: map-get($layout-breaks, "large")) {
       display: flex;
