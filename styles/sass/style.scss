@@ -22,6 +22,7 @@ $colors: (
   accent1: #59a0e8,
   accent2: #2d3553,
   background: white,
+
   // Misc colors
   background-photos: #f5f7f8,
   background-menu: black,
@@ -37,7 +38,7 @@ $colors: (
 $padding: 22px;
 
 :root {
-  font-size: 100%;        // Browser usually defaults to 16px.
+  font-size: 100%;
   line-height: 1.4;
   background-color: map-get($colors, "background");
 }
@@ -48,7 +49,7 @@ body {
   width: 100%;
   margin: 0 auto;
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: map-get($colors, "text-dark");
 }
 
