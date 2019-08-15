@@ -75,7 +75,8 @@ button {
   border: 0;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color .2s ease, color .2s ease;
+  transition: background-color .2s ease, color .2s ease,
+              border-color .2s ease, color .2s ease;
 
   &.dark-button {
     color: map-get($colors, "text-light");
@@ -84,6 +85,7 @@ button {
   
     &:hover {
       background-color: map-get($colors, "accent1");
+      border-color: map-get($colors, "accent1");
     }
   }
   
@@ -95,6 +97,7 @@ button {
     &:hover {
       color: map-get($colors, "text-light");
       background-color: map-get($colors, "accent2");
+      border-color: map-get($colors, "accent2");
     }
   }
   
@@ -106,6 +109,7 @@ button {
     &:hover {
       color: map-get($colors, "text-light");
       background-color: map-get($colors, "accent1");
+      border-color: map-get($colors, "accent1");
     }
   }
 }

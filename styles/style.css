@@ -92,7 +92,7 @@ button {
   border: 0;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 button.dark-button {
   color: white;
@@ -101,6 +101,7 @@ button.dark-button {
 }
 button.dark-button:hover {
   background-color: #59a0e8;
+  border-color: #59a0e8;
 }
 button.light-button {
   color: #3f69ee;
@@ -110,6 +111,7 @@ button.light-button {
 button.light-button:hover {
   color: white;
   background-color: #2d3553;
+  border-color: #2d3553;
 }
 button.transparent-button {
   color: #333;
@@ -119,6 +121,7 @@ button.transparent-button {
 button.transparent-button:hover {
   color: white;
   background-color: #59a0e8;
+  border-color: #59a0e8;
 }
 
 .hero-content h2, .hero-content h1 {
