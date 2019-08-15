@@ -13,7 +13,8 @@ $layout-breaks: (
   tablet: 425px,
   desktop: 768px,
   large: 1024px,
-  4k: 2560px
+  4k: 2560px,
+  copyright: 864px
 );
 
 $colors: (
@@ -28,8 +29,9 @@ $colors: (
   background-menu: black,
   background-submenu: #333,
   text-light: white,
-  text-medium1: #adb6be,
-  text-medium2: #7a8792,
+  text-medium0: #dae5ee,
+  text-medium1: #9fa8af,
+  text-medium2: #657079,
   text-dark: #333,
   border: #ebebeb,
   border-btn: #d9dadd
@@ -62,9 +64,9 @@ a {
 // ==============================================
 
 button {
-  width: 230px;
-  padding: 1em;
-  font-size: .75rem;
+  width: 250px;
+  padding: .8125rem;
+  font-size: .8125rem;
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: 1px;
@@ -75,14 +77,10 @@ button {
   cursor: pointer;
   transition: background-color .2s ease, color .2s ease;
 
-  @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-    width: 220px;
-    font-size: 1em;
-  }
-
   &.dark-button {
     color: map-get($colors, "text-light");
     background-color: map-get($colors, "dominant");
+    border: 1px solid map-get($colors, "dominant");
   
     &:hover {
       background-color: map-get($colors, "accent1");
@@ -92,6 +90,7 @@ button {
   &.light-button {
     color: map-get($colors, "dominant");
     background-color: map-get($colors, "background");
+    border: 1px solid map-get($colors, "background");
   
     &:hover {
       color: map-get($colors, "text-light");
@@ -167,7 +166,7 @@ button {
 //  Regular menu for desktop
 // ==============================================
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1028px) {
   #nav-btn {
     display: none;
   }
@@ -227,7 +226,7 @@ button {
 //  Toggling menu for mobile
 // ==============================================
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1028px) {
   #nav-btn {
     display: flex;
     width: 40px;
@@ -317,19 +316,20 @@ button {
     animation: 500ms ease fade-in-up-on-load;
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-      font-size: 3em;
+      font-size: 2.25em;
     }
   }
 
   h2 {
     margin: 10px 0;
     line-height: 1.4;
+    color: map-get($colors, "text-medium0");
     @extend %text-shadow;
     animation: 500ms ease fade-in-down-on-load 500ms backwards;
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
       padding: 10px 0;
-      font-size: 1.4em;
+      font-size: 1.3125em;
     }
   }
 
@@ -361,14 +361,14 @@ button {
 
   padding-right: $padding * 3;
   padding-bottom: $padding * 2;
-  font-size: .75em;
+  font-size: .8125em;
   color: map-get($colors, "text-light");
   text-align: right;
 
   @media screen and (min-width: map-get($layout-breaks, "desktop")) {
     padding-right: $padding * 5;
     padding-bottom: $padding * 4;
-    font-size: 1em;
+    font-size: .875em;
   }
 
   a {
@@ -405,7 +405,7 @@ button {
     line-height: 1.2;
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-      font-size: 2.4em;
+      font-size: 2.25em;
     }
   }
 
@@ -416,7 +416,7 @@ button {
     line-height: 1.4;
 
     @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-      font-size: 1.5em;
+      font-size: 1.3125em;
     }
   }
 }
@@ -429,7 +429,7 @@ button {
   background-color: map-get($colors, "background-photos");
   border-top: 1px solid map-get($colors, "border");
 
-  @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+  @media screen and (min-width: 594px) {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 180px 220px 180px auto;
     column-gap: 10px;
@@ -533,7 +533,7 @@ button {
       width: 100%;
       margin: -6% 0;
 
-      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+      @media screen and (min-width: 594px) {
         height: 100%;
         margin: 0;
         object-fit: cover;
@@ -550,10 +550,6 @@ button {
       color: map-get($colors, "text-light");
       font-weight: 500;
       text-align: left;
-
-      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-        font-size: 1.1em;
-      }
     }
   }
 }
@@ -563,25 +559,15 @@ button {
 
   @media screen and (min-width: map-get($layout-breaks, "desktop")) {
     display: flex;
-    margin: 45px auto 0;
+    justify-content: center;
   }
 
   button {
-    margin: 0 10px;
+    margin: 5px 10px 0 10px;
 
     @media screen and (max-width: 425px) {
       width: 100%;
       margin: 5px 0 0 0;
-    }
-
-    @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-      padding: 9px 35px;
-    }
-
-    &.transparent-button {
-      @media screen and (min-width: map-get($layout-breaks, "desktop")) {
-        padding: 9px 20px;
-      }
     }
   }
 }
@@ -599,7 +585,7 @@ footer {
   color: map-get($colors, "text-medium1");
   border-top: 1px solid #eee;
 
-  @media screen and (min-width: map-get($layout-breaks, "desktop")) {
+  @media screen and (min-width: 712px) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     column-gap: 40px;
@@ -617,7 +603,7 @@ footer {
 
   h2 {
     margin-bottom: 10px;
-    font-size: 1em;
+    font-size: 1rem;
     color: #000;
     font-weight: 400;
     letter-spacing: 1px;
@@ -647,16 +633,20 @@ footer {
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 0;
-  font-size: .75em;
+  font-size: .75rem;
   border-top: 1px solid rgba(0,0,0,.06);
 
-  @media screen and (min-width: map-get($layout-breaks, "large")) {
+  @media screen and (min-width: map-get($layout-breaks, "copyright")) {
     display: flex;
     justify-content: space-between;
   }
 
   p:last-child {
     margin-top: 1em;
+
+    @media screen and (min-width: map-get($layout-breaks, "copyright")) {
+      margin-top: 0;
+    }
   }
 
   a {
