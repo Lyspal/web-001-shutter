@@ -185,6 +185,7 @@ button.transparent-button:hover {
   }
 
   .nav-element {
+    margin-top: 10px;
     margin-left: 25px;
     padding-bottom: 10px;
     color: white;
