@@ -510,6 +510,10 @@ button {
       grid-row-end: 5;
     }
   }
+
+  @media screen and (min-width: map-get($layout-breaks, "large")) {
+    grid-template-rows: 230px 340px 230px auto;
+  }
 }
 
 .photo {
@@ -566,6 +570,11 @@ button {
     justify-content: center;
   }
 
+  @media screen and (min-width: map-get($layout-breaks, "large")) {
+    margin-top: 19px;
+  }
+
+
   button {
     margin: 5px 10px 0 10px;
 
@@ -600,10 +609,22 @@ footer {
       grid-column-end: 5;
     }
   }
+
+  @media screen and (min-width: map-get($layout-breaks, "large")) {
+    padding-top: 100px;
+  }
 }
 
 .footer-col {
   padding-bottom: 15px;
+
+  @media screen and (min-width: 872px) {
+    margin-left: 40px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
 
   h2 {
     margin-bottom: 10px;
@@ -612,6 +633,10 @@ footer {
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 712px) {
+    #bio { width: 75%; }
   }
 
   p { display: block; }
@@ -643,6 +668,10 @@ footer {
   @media screen and (min-width: map-get($layout-breaks, "copyright")) {
     display: flex;
     justify-content: space-between;
+  }
+
+  @media screen and (min-width: map-get($layout-breaks, "large")) {
+    margin-top: 50px;
   }
 
   p:last-child {
