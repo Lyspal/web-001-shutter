@@ -136,12 +136,7 @@ button.transparent-button:hover {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/hero.jpg) center/auto 100% no-repeat;
-}
-@media screen and (min-width: 972px) {
-  #hero {
-    background-size: cover;
-  }
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/hero.jpg) center/cover no-repeat;
 }
 
 #main-nav {

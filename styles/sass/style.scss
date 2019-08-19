@@ -132,11 +132,7 @@ button {
       rgba($color: #000, $alpha: .2),
       rgba($color: #000, $alpha: .2)
     ),
-    url(../images/hero.jpg) center / auto 100% no-repeat;
-
-  @media screen and (min-width: 972px) {
-    background-size: cover;
-  }
+    url(../images/hero.jpg) center / cover no-repeat;
 }
 
 #main-nav {
