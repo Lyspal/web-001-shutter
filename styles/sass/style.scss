@@ -43,6 +43,7 @@ $padding: 22px;
 }
 
 body {
+  -webkit-text-size-adjust:100%;
   min-width: 320px;
   max-width: 1440px;
   width: 100%;
@@ -63,6 +64,7 @@ a {
 button {
   width: 250px;
   padding: .8125rem;
+  font-family: 'Lato', sans-serif;
   font-size: .8125rem;
   line-height: 1.4;
   font-weight: 400;
