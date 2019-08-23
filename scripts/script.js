@@ -31,12 +31,12 @@ function expandSubMenu(action) {
 
     if (action) {
         for (var i = 0; i < elementsWithSubMenu.length; i++) {
-            elementsWithSubMenu[i].addEventListener("click", toggleSubMenu, false);
+            elementsWithSubMenu[i].addEventListener("click", toggleSubMenu);
         };
     } else {
         // SOLVED listener not removing. Because new var toggleSubMenu when double calling expandSubMenu.
         for (var j = 0; j < elementsWithSubMenu.length; j++) {
-            elementsWithSubMenu[j].removeEventListener("click", toggleSubMenu, false);
+            elementsWithSubMenu[j].removeEventListener("click", toggleSubMenu);
         };
     };
 };
@@ -52,6 +52,7 @@ function expandSubMenu(action) {
 function toggleNavMenu() {
     let navButton = document.getElementById("nav-btn");
     let navMenu = document.getElementsByClassName("nav-menu");
+    let allButNav = document.querySelectorAll(":not(.nav-menu)");
 
     /**
      * Handler for opening main menu.
@@ -60,8 +61,11 @@ function toggleNavMenu() {
     const openMenu = function() {
         navMenu[0].classList.add("active");
         event.stopPropagation();
-        document.addEventListener("click", closeMenu, false);
-        navButton.removeEventListener("click", openMenu, false);
+        allButNav.forEach(function(currentValue) {
+            currentValue.addEventListener("touchstart", closeMenu);
+            currentValue.addEventListener("click", closeMenu);
+        });
+        navButton.removeEventListener("click", openMenu);
         expandSubMenu(true);
     };
 
@@ -69,18 +73,22 @@ function toggleNavMenu() {
      * Handler for closing main menu.
      * @function closeMenuà
      */
-    const closeMenu = function() {
+    const closeMenu = function(event) {
+        event.preventDefault();
         if (event.target.closest(".nav-menu")) {
             return;
         } else {
             navMenu[0].classList.remove("active");
-            document.removeEventListener("click", closeMenu, false);
-            navButton.addEventListener("click", openMenu, false);
+            allButNav.forEach(function(currentValue) {
+                currentValue.removeEventListener("touchstart", closeMenu);
+                currentValue.removeEventListener("click", closeMenu);
+            });
+            navButton.addEventListener("click", openMenu);
             expandSubMenu(false);
         };
     };
 
-    navButton.addEventListener("click", openMenu, false);
+    navButton.addEventListener("click", openMenu);
 };
 
 
