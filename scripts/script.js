@@ -61,6 +61,7 @@ function toggleNavMenu() {
         navMenu[0].classList.add("active");
         event.stopPropagation();
         document.addEventListener("click", closeMenu, false);
+        document.addEventListener("touchstart", closeMenu, false);
         navButton.removeEventListener("click", openMenu, false);
         expandSubMenu(true);
     };
@@ -75,6 +76,7 @@ function toggleNavMenu() {
         } else {
             navMenu[0].classList.remove("active");
             document.removeEventListener("click", closeMenu, false);
+            document.removeEventListener("touchstart", closeMenu, false);
             navButton.addEventListener("click", openMenu, false);
             expandSubMenu(false);
         };
