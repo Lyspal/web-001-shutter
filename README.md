@@ -1,2 +1,5 @@
 # web-001-shutter
-A serie of website replication for practicing Web design and development. Site replicated: http://template-shutter.webflow.io/home-2.
+
+A serie of webpage replications for practicing Web development. The goal is to follow the original design as closely as possible.
+
+Webpage replicated: http://template-shutter.webflow.io/home-2.
